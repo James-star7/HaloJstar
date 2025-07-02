@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Diri Kamu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-200 p-5">
+    <h1 class="text-4xl text-center text-indigo-800 mb-4">Selamat Datang!</h1>
+    <hr class="border-orange-500 my-4">
+
+    <h1 class="text-3xl text-center text-orange-600 mb-6">Isi Data Diri Kamu</h1>
+    <div class="max-w-2xl mx-auto p-8 bg-white rounded-xl shadow-lg">
+
+    <form method="post" action="/submit-form">
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" name="nama" 
+        placeholder="Tulis Nama Anda..." 
+        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required/>
+        <br>
+
+        <label for="tempat-lahir">Tempat Lahir</label>
+        <input type="text" id="tempat-lahir" name="tempat-lahir" 
+        placeholder="Padang" 
+        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required/>
+        <br>
+
+        <label for="tanggal-lahir">Tanggal Lahir</label>
+        <input type="date" id="tanggal-lahir" name="tanggal-lahir" 
+        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required>
+        <br>
+
+        <label for="umur">Umur</label>
+        <input type="number" id="umur" name="umur" min="0" max="100" 
+        placeholder="18" 
+        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" required/>
+        <br>
+
+        <label>Jenis Kelamin</label>
+        <div class="flex gap-8 my-4">
+        <div class="flex items-center">
+            <input type="radio" id="laki-laki" value="Male" name="jenis-kelamin" required 
+            class="w-4 h-4 mr-2 text-blue-600 focus:ring-blue-500">
+            <label for="laki-laki">Laki-Laki</label>
+            </div>
+            <div class="flex items-center">
+            <input type="radio" id="perempuan" value="Female" name="jenis-kelamin" required 
+            class="w-4 h-4 mr-2 text-blue-600 focus:ring-blue-500">
+            <label for="perempuan">Perempuan</label>
+            </div>
+        </div>
+
+        <label for="mood">Mood Kamu Hari Ini</label>
+        <input type="range" id="mood" name="mood" min="1" max="10">
+        <br>
+
+        <label for="makanan-favorit">Makanan Favorit</label>
+        <select id="makanan-favorit" name="makanan-favorit" 
+        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+            <option value="Nasi-Goreng">Nasi Goreng</option>
+            <option value="Sate">Sate</option>
+            <option value="Rendang">Rendang</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Ramen">Ramen</option>
+            <option value="Sushi">Sushi</option>
+            <option value="Cokelat">Cokelat</option>
+            <option value="Mie">Mie</option>
+            <option value="Dumpling">Dumpling</option>
+            <option value="Bakso">Bakso</option>
+            <option value="Kebab">Kebab</option>
+            <option value="Steak">Steak</option>
+            <option value="Burger">Burger</option>
+            <option value="Fried-Chicken">Fried Chicken</option>
+            <option value="Es-Krim">Es Krim</option>
+        </select>
+        <br>
+
+        <label for="cerita">Ceritakan Diri Anda</label>
+        <br>
+
+        <textarea id="cerita" name="cerita" 
+        placeholder="Tulis Cerita Anda disini..."
+        class="w-full p-3 border border-gray-300 
+        rounded-lg h-40 focus:ring-2 focus:
+        ring-blue-500"></textarea>
+
+        <br>
+
+        <input type="checkbox" id="setuju" name="setuju" required/>
+        <label for="setuju">Saya setuju data yang saya input adalah benar</label>
+        <br>
+
+        <input type="submit" value="Kirim" class="w-full mt-6 py-3 px-4 bg-green-600 
+        hover:bg-green-700 text-white font-medium rounded-lg cursor-pointer transition-colors 
+        duration-200"/>
+        <div id="message" class="message"></div>
+    </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
